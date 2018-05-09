@@ -1,0 +1,20 @@
+{
+  "service": {
+    "virtual_network_enabled": true,
+    "virtual_network_name": "dcos",
+    "service_account": "zookeeper",
+    "service_account_secret": "/kafka-zookeeper/private-zookeeper",
+    "security": {
+      "kerberos": {
+        "enabled": true,
+        "kdc": {
+          "hostname": "kdc.marathon.containerip.dcos.thisdcos.directory",
+          "port": 88
+        },
+        "primary": "zookeeper",
+        "realm": "MESOS.LAB",
+        "keytab_secret": "keytab"
+      }
+    }
+  }
+}
