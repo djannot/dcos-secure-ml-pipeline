@@ -2,8 +2,8 @@ broker=`dcos kafka --name=kafka endpoints broker-tls | grep kafka-0-broker | cut
 dcos spark run --submit-args="\
 --kerberos-principal=hdfs/name-0-node.hdfs.autoip.dcos.thisdcos.directory@MESOS.LAB \
 --conf spark.mesos.containerizer=mesos \
+--conf spark.mesos.network.name=dcos \
 --conf spark.mesos.principal=spark \
---conf spark.mesos.driverEnv.SPARK_USER=root \
 --keytab-secret-path=keytab \
 --keystore-secret-path=keystore \
 --keystore-password=changeit \

@@ -1,6 +1,7 @@
 dcos spark run --submit-args="\
 --kerberos-principal=hdfs/name-0-node.hdfs.autoip.dcos.thisdcos.directory@MESOS.LAB \
 --conf spark.mesos.containerizer=mesos \
+--conf spark.mesos.network.name=dcos \
 --conf spark.mesos.principal=spark \
 --keytab-secret-path=keytab \
 --keystore-secret-path=keystore \

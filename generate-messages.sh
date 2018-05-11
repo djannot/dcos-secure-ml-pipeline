@@ -4,7 +4,6 @@ dcos spark run --submit-args="\
 --conf spark.mesos.containerizer=mesos \
 --conf spark.mesos.network.name=dcos \
 --conf spark.mesos.principal=spark \
---conf spark.mesos.driverEnv.SPARK_USER=root \
 --keytab-secret-path=keytab \
 --keystore-secret-path=keystore \
 --keystore-password=changeit \

@@ -91,7 +91,6 @@ dcos security secrets create-sa-secret --strict private-spark.pem spark /spark/p
 dcos security org users grant spark dcos:mesos:master:framework:role:* create
 dcos security org users grant spark dcos:mesos:master:task:app_id:/spark create
 dcos security org users grant spark dcos:mesos:master:task:user:nobody create
-dcos security org users grant spark dcos:mesos:master:task:user:root create
 
 # Deploy spark
 dcos package install --yes spark --options=options-spark.json

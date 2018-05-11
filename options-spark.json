@@ -2,7 +2,7 @@
   "service": {
     "UCR_containerizer": true,
     "service_account": "spark",
-    "user": "root",
+    "user": "nobody",
     "service_account_secret": "spark/private-spark"
   },
   "hdfs": {
