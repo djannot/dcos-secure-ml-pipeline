@@ -81,7 +81,6 @@ dcos package install --yes kafka --options=options-kafka.json
 
 # Create the spark service account
 dcos security org service-accounts keypair private-spark.pem public-spark.pem
-
 dcos security org service-accounts create -p public-spark.pem -d spark spark
 #dcos security org users grant spark dcos:secrets:default:/spark/* full
 #dcos security org users grant spark dcos:secrets:list:default:/spark full
