@@ -24,7 +24,14 @@ curl -k -v $dcos/ca/dcos-ca.crt -o dcos-ca.crt
 openssl x509 -in dcos-ca.crt -inform pem -out dcos-ca.der -outform der
 keytool -importcert -alias startssl -keystore trust-ca.jks -storepass changeit -file dcos-ca.der -noprompt
 
+# Produce kafka messages with a cluster in permissive mode (not needed normally)
 #./kafka_2.11-1.0.0/bin/kafka-console-producer.sh --broker-list SSL://kafka-0-broker.kafka.autoip.dcos.thisdcos.directory:1026 --topic top1 --producer-property security.protocol=SASL_SSL --producer-property ssl.truststore.location=`pwd`/trust-ca.jks --producer-property ssl.truststore.password=changeit
 
-# Listen to kafka messages
+# Produce kafka messages with a cluster in strict mode (not needed normally)
+#./kafka_2.11-1.0.0/bin/kafka-console-producer.sh --broker-list SSL://kafka-0-broker.kafka.autoip.dcos.thisdcos.directory:1025 --topic top1 --producer-property security.protocol=SASL_SSL --producer-property ssl.truststore.location=`pwd`/trust-ca.jks --producer-property ssl.truststore.password=changeit
+
+# Listen to kafka messages with a cluster in permissive mode
 ./kafka_2.11-1.0.0/bin/kafka-console-consumer.sh --topic top1 --bootstrap-server SSL://kafka-0-broker.kafka.autoip.dcos.thisdcos.directory:1026 --from-beginning --consumer-property security.protocol=SASL_SSL --consumer-property ssl.truststore.location=`pwd`/trust-ca.jks --consumer-property ssl.truststore.password=changeit
+
+# Listen to kafka messages with a cluster in strict mode
+./kafka_2.11-1.0.0/bin/kafka-console-consumer.sh --topic top1 --bootstrap-server SSL://kafka-0-broker.kafka.autoip.dcos.thisdcos.directory:1025 --from-beginning --consumer-property security.protocol=SASL_SSL --consumer-property ssl.truststore.location=`pwd`/trust-ca.jks --consumer-property ssl.truststore.password=changeit
