@@ -2,6 +2,8 @@
 
 You need to provision a DC/OS Enterprise Edition cluster in either `permissive` or `strict` mode.
 
+A DC/OS cluster with at least 7 private agents providing 28 CPU and 64 GB of RAM is required.
+
 If you deploy it in strict mode, you need to setup the DCOS cli using `https` (dcos cluster setup `https://`).
 
 Then, you simply need to execute the following command:
