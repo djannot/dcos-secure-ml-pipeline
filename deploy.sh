@@ -103,3 +103,6 @@ dcos spark secret /spark-auth-secret
 
 # Create the kafka topic
 dcos kafka topic create top1
+
+# Wait a minute before running any Spark job
+sleep 60

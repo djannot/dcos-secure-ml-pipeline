@@ -38,8 +38,26 @@ Finally, you can run the following script to use the model previously created to
 ./classify-messages.sh
 ```
 
+To access `stdout`, you click on the arrow close to the `Spark` service:
+
+![dcos](dcos.PNG) 
+
+Then, you click on the `Sandbox` link corresponding to the `SpamHamStreamingClassifier` driver:
+
+![spark](spark.PNG)
+
+Finally, you click on `stdout`:
+
+![mesos](mesos.PNG)
+
+You can see the accuracy displayed at the end of the log:
+
+![log](log.PNG)
+
 The 3 `Spark` jobs are using a `jar` file that has also been uploaded to an Amazon S3 bucket to simplify the process.
 
 The source code is available [here](https://github.com/djannot/spark-build/blob/master/tests/jobs/scala/src/main/scala/SpamHam.scala).
 
 The `hdfs-client.txt` and the `kafka-client.txt` files are showing the commands to use if you want to check the files stored in `HDFS` and the messages produced in `Kafka`.
+
+A video going through the full demo is available on YouTube [here](https://www.youtube.com/watch?v=WMISqFRk28E).
