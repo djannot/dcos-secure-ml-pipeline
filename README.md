@@ -40,19 +40,19 @@ Finally, you can run the following script to use the model previously created to
 
 To access `stdout`, you click on the arrow close to the `Spark` service:
 
-![dcos](dcos.PNG) 
+![dcos](dcos.png) 
 
 Then, you click on the `Sandbox` link corresponding to the `SpamHamStreamingClassifier` driver:
 
-![spark](spark.PNG)
+![spark](spark.png)
 
 Finally, you click on `stdout`:
 
-![mesos](mesos.PNG)
+![mesos](mesos.png)
 
 You can see the accuracy displayed at the end of the log:
 
-![log](log.PNG)
+![log](log.png)
 
 The 3 `Spark` jobs are using a `jar` file that has also been uploaded to an Amazon S3 bucket to simplify the process.
 
